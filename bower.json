@@ -1,0 +1,20 @@
+{
+  "name": "physical-web",
+  "version": "0.0.0",
+  "authors": [
+    "Jon Burr"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html5-boilerplate": "~5.3.0",
+    "jquery": "~2.2.2",
+    "waypoints": "~4.0.0"
+  }
+}

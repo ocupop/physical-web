@@ -1,0 +1,79 @@
+#faq {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.faqs ul.faq-list {
+  list-style: none;
+  margin: 0;
+  background-color: $grey-light;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.faqs ul.faq-list>li {
+  border-bottom: 1px solid #bcbec0;
+}
+
+.faqs ul.faq-list>li:last-child {
+  border-bottom: none
+}
+
+.faqs ul.faq-list>li>a {
+  position: relative;
+  padding: 1.5em 1.5em 1.5em 3.5em;
+  cursor: pointer;
+  line-height: 1.4;
+  display: block;
+  color: $grey
+}
+
+.faqs ul.faq-list>li>a::after {
+  content: '+';
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  background: $white;
+  font-size: 2em;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+}
+
+.faqs ul.faq-list>li div {
+  max-height: 0;
+  overflow: hidden;
+  line-height: 1.6;
+  -webkit-transition: max-height 250ms, padding-top 250ms, padding-bottom 250ms;
+  transition: max-height 250ms, padding-top 250ms, padding-bottom 250ms;
+  background-color: $blue;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 0 1.5em;
+}
+
+.faqs ul.faq-list>li div p {
+  margin: 0
+}
+
+.faqs ul.faq-list>li div a {
+  color: #fff;
+  text-decoration: underline
+}
+
+.faqs ul.faq-list>li div ol {
+  padding-left: 1.2em
+}
+
+.faqs ul.faq-list>li.open>a::after {
+  content: '-'
+}
+
+.faqs ul.faq-list>li.open div {
+  padding: 1.5em;
+}
+
+.faqs ul.faq-list>li.open div {
+    max-height: 600px
+}

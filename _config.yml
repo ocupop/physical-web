@@ -1,0 +1,47 @@
+# Site settings
+title: Google Physical Web
+baseurl: "/physical-web" # the subpath of your site, e.g. /blog
+url: "http://ocupopdev.com" # the base hostname & protocol for your site
+
+# Build settings
+safe: false
+source: src
+destination: publish
+markdown: kramdown
+
+include: ["_pages"]
+exclude: ["vendor"]
+
+gems:
+- jekyll-assets
+- jekyll-toc
+
+assets:
+  compress:
+    css: true # default - development: false, production: true
+    js: true # default - development: false, production: true
+  cache: false # default: .asset-cache
+  # cdn: https://cdn.example.com
+  # skip_baseurl_with_cdn: false
+  # skip_prefix_with_cdn: false
+  prefix: "/assets"
+  assets:
+    - "*.png"
+    - "*.jpg"
+    - "*.eot"
+    - "*.ttf"
+    - "*.woff"
+    - "*.svg"
+    - "*.scss"
+  #   - "bundle.css"
+  digest: true
+  sources:
+    - _assets/bower
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/media
+    - _assets/fonts
+  features:
+    liquid: true # default: false
+    automatic_img_size: true # default: true
+    automatic_img_alt : true # default: true

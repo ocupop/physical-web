@@ -1,0 +1,233 @@
+#explanatory_signal1, #explanatory_signal2, #explanatory_signal3 {
+  opacity: 0;
+}
+.animation, .message {
+  h3 {
+    margin-top: 0;
+    margin-bottom:0;
+  }
+  .content {
+    padding: 0;
+  }
+}
+
+.message {
+  width: 60%;
+  p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+}
+
+// .art {
+//   .device_signal {
+//     path {
+//       transform: translate(-26px, 92px) scale(0.3);
+//       transform-origin: center !important;
+//     }
+//   }
+// }
+
+.animation {
+  text-align: right;
+  svg {
+    width: 400px;
+    height: 250px;
+    max-width: 100%;
+    position: relative;
+    path {
+      fill: $grey;
+    }
+    rect {
+      fill: $grey;
+      stroke: $grey;
+      stroke-width: 0px;
+    }
+
+    .white {
+      fill: $white;
+    }
+    .grey {
+      fill: $grey;
+    }
+    .grey-light {
+      fill: $grey-light;
+    }
+    .grey-lighter {
+      fill: $grey-lighter;
+    }
+    .blue {
+      fill: $blue;
+    }
+    .active {
+      fill: $blue !important;
+    }
+    .device_signal {
+      path {
+        fill: $blue;
+      }
+    }
+    .target {
+      transform-origin: center;
+    }
+
+    // Phone
+    .phone {
+      opacity: 1;
+      transform-origin: center;
+      transform: translate(80px, 0);
+      .phone_content {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+    }
+
+    // Meter
+    #meter_content {
+      opacity: 0;
+      .text {
+        opacity: 0;
+        &:nth-of-type(1) {
+          opacity: 1;
+        }
+      }
+    }
+    #meter_time {
+      .text {
+        opacity: 0;
+        &:nth-of-type(1) {
+          opacity: 1;
+        }
+      }
+    }
+
+    // Pet
+    #pet_content {
+      opacity: 0;
+    }
+
+    // Art
+    #artist_content {
+      opacity: 0;
+    }
+    #art_content {
+      opacity: 0;
+    }
+  }
+  &.active {
+    .content {
+      background-image: none;
+    }
+    &.meter {
+      #meter_content {
+        opacity: 0;
+        @include animation(fadeIn, 1s, 1s);
+        .timer {
+          .text {
+            &:nth-of-type(1) {
+              opacity: 1;
+            }
+            &:nth-of-type(2) {
+              opacity: 0;
+              @include animation(fadeIn, 0.3s, 2s);
+            }
+            &:nth-of-type(3) { 
+              opacity: 0;
+              @include animation(fadeIn, 0.3s, 3.5s);
+            }
+            &:nth-of-type(4) { 
+              opacity: 0;
+              @include animation(fadeIn, 0.3s, 5s);
+            }
+          }
+        }
+      }
+      #add_time {
+        @include animation(click_event, 1.5s, 1.5s, 3);
+      }
+      #meter_time {
+        .text {
+          &:nth-of-type(1) {
+            opacity: 1;
+          }
+          &:nth-of-type(2) {
+            opacity: 0;
+            @include animation(fadeIn, 0.3s, 2.5s);
+          }
+          &:nth-of-type(3) { 
+            opacity: 0;
+            @include animation(fadeIn, 0.3s, 4s);
+          }
+          &:nth-of-type(4) { 
+            opacity: 0;
+            @include animation(fadeIn, 0.3s, 5.5s);
+          }
+        }
+      }
+      #pay_button {
+        opacity: 1;
+        @include animation(fadeOut, 0.3s, 6.5s);
+      }
+    }
+    &.pet {
+      #pet_content {
+        opacity: 1;
+        @include animation(fadeIn, 0.5s, 1s);
+      }
+      #tail {
+        transform-origin: 0% 80%;
+        @include animation(tail_wag, 2s, 2s, infinite);
+      }
+      #call_button_bg {
+        @include animation(activate_button, 0.5s, 2s);
+      }
+    }
+    &.art {
+      #artist_content {
+        opacity: 1;
+        @include animation(scrollArtist, 0.5s, 3s);
+      }
+      #art_content {
+        opacity: 1;
+        @include animation(scrollArt, 0.5s, 3s);
+      }
+      .device_signal {
+        opacity: 0;
+        @include animation(fadeIn, 0.3s, 0);
+      }
+    }
+    &.explanatory {
+      #explanatory_phone_content {
+        @include animation(phoneExplanatory, 1s, 1s);
+        #beacon1, #explanatory_meter_phone {
+          @include animation(fadeIn, 1s, 2s);
+        }
+        #beacon2, #explanatory_pet_phone {
+          @include animation(fadeIn, 1s, 3s);
+        }
+        #beacon3, #explanatory_art_phone {
+          @include animation(fadeIn, 1s, 4s);
+        }
+      }
+      #explanatory_signal1, #explanatory_signal2, #explanatory_signal3 {
+        opacity: 0;
+        path {
+          @for $i from 1 through 6 {
+            &:nth-child(#{$i}) { 
+              @include animation(signalBeat, 2s, 0.03s * $i, infinite);
+            }
+          }
+        }
+      }
+      #explanatory_signal1 {
+        @include animation(fadeIn, 1s, 1s);
+      }
+      #explanatory_signal2 {
+        @include animation(fadeIn, 1s, 2s);
+      }
+      #explanatory_signal3 {
+        @include animation(fadeIn, 1s, 3s);
+      }
+    }
+  }
+}

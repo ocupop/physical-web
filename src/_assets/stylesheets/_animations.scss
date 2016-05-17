@@ -1,0 +1,81 @@
+@mixin animation($effect: fadeIn,  $duration: 0.5s, $delay: 0s, $count: 1, $direction: normal) {
+  animation-name: $effect;
+  animation-duration: $duration;
+  animation-delay: ($delay);
+  animation-iteration-count: $count;
+  animation-fill-mode: both;
+  animation-direction: $direction;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+@keyframes click_event {
+  0%, 100% {
+    fill: $grey;
+  }
+  40%, 50% {
+    fill: $blue;
+  }
+}
+@keyframes activate_button {
+  0% {
+    fill: $grey;
+  }
+  100% {
+    fill: $blue;
+  }
+}
+@keyframes tail_wag {
+  0% { transform: rotateY(0deg); }
+  20% { transform: rotateY(35deg); }
+  40% { transform: rotateY(-35deg); }
+  60% { transform: rotateY(15deg); }
+  100% { transform: rotateY(0deg); }
+}
+@keyframes scrollArtist {
+  0% { transform: translateY(100%); }
+  90% { transform: translateY(0%); }
+  100% { transform: translateY(0%); }
+}
+@keyframes scrollArt {
+  0% { transform: translateY(0%); }
+  90% { transform: translateY(-100%); }
+  100% { transform: translateY(-100%); }
+}
+@keyframes signalBeat {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 100%);
+    // transform: scale(1);
+    visibility: visible;
+  }
+  90% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes phoneExplanatory {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  100% { opacity: 1; }
+}

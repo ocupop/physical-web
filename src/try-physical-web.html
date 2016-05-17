@@ -1,0 +1,96 @@
+---
+layout: sidebar
+title: "How to Try The Physical Web on Chrome"
+toc: true
+---
+  
+<h2>How to Try The Physical Web on Chrome</h2>
+<span class="date">Updated March 17, 2016</span>
+<p>The Physical Web enables you to discover web pages associated with everyday objects and locations. It is powered by bluetooth low energy (BLE) beacons that broadcast URLs using the Eddystone format. Various mobile browsers are working to display these URLs. This document explains how to use the Physical Web on Chrome.
+<p>If you experience any issues using the Physical Web, please reach out to <a href="mailto:physical-web-discuss@googlegroups.com">physical-web-discuss@googlegroups.com</a>.</p>
+<h2 id="ios">iOS</h2>
+<p>As of July 2015, Chrome for iOS supports the Physical Web. You can take the following steps to discover Physical Web URLs via Chrome for iOS:</p>
+<ol>
+  <li>
+    <h4>Turn on Bluetooth if not enabled.</h4>
+    <img src="{% asset_path 'images/image01.png' %}" srcset="{% asset_path 'images/image01@2x.png' %} 2x" alt="Turn on Bluetooth">
+  </li>
+  <li>
+    <h4>Swipe down notification shade to visit ‘Today’ view. Scroll to the bottom and tap ‘Edit’.</h4><br/>
+    <img src="{% asset_path 'images/image02.png' %}" alt="">
+  </li>
+  <li>
+    <h4>Scroll down to the ‘Do not include’ section and add the Chrome widget.</h4>
+    <div class="row">
+      <img src="{% asset_path 'images/image03.png' %}" alt="Scroll to 'Do not include' section">
+      <img src="{% asset_path 'images/image04.png' %}" alt="Add the Chrome widget">
+    </div>
+  </li>
+  <li>
+    <h4>Click ‘Done’ and scroll to the Chrome widget. Opt in to the Physical Web.</h4>
+    <img src="{% asset_path 'images/image05.png' %}" alt="">
+  </li>
+  <li>
+    <h4>Go near beacons broadcasting Eddystone-URL sites. You should now see beacons in the widget.</h4>
+    <img src="{% asset_path 'images/image06.png' %}" alt="">
+  </li>
+</ol>
+<h2 id="android">Android</h2>
+<p>The Physical Web is available starting Chrome version 49 (released in early March) and on devices running Android KitKat (4.4) and above. When you are near a beacon for the first time (and if you have Bluetooth enabled) you will receive a notification describing the Physical Web.</p>
+<p>If you’d like to explicitly turn on Physical Web, try the following:</p>
+<ol>
+  <li>
+    <h4>Check that you have an active data connection as well as Bluetooth and Location turned on. The notification shade provides an easy way to check that these requirements are met:</h4>
+    <img src="{% asset_path 'images/image07.png' %}" srcset="{% asset_path 'images/image07@2x.png' %} 2x" alt="Check active data connection, bluetooth and location turned on">
+  </li>
+  <li>
+    <h4>Enable the Physical Web privacy option from within Chrome in Privacy settings:</h4>
+    <div class="row">
+      <img src="{% asset_path 'images/image08.png' %}" srcset="{% asset_path 'images/image08@2x.png' %} 2x" alt="Enable the Physical Web privacy option from within Chrome in Privacy settings">
+      <img src="{% asset_path 'images/image09.png' %}" srcset="{% asset_path 'images/image09@2x.png' %} 2x" alt="Enable the Physical Web privacy option from within Chrome in Privacy settings">
+    </div>
+    <div class="row">
+      <img src="{% asset_path 'images/image10.png' %}" srcset="{% asset_path 'images/image10@2x.png' %} 2x" alt="Enable the Physical Web privacy option from within Chrome in Privacy settings">
+      <img src="{% asset_path 'images/image11.png' %}"  srcset="{% asset_path 'images/image11@2x.png' %} 2x"alt="Enable the Physical Web privacy option from within Chrome in Privacy settings">
+    </div>
+    <img src="{% asset_path 'images/image12.png' %}" srcset="{% asset_path 'images/image12@2x.png' %} 2x" alt="Enable the Physical Web privacy option from within Chrome in Privacy settings"> 
+
+    <p><strong>(Marshmallow ONLY)</strong> On Marshmallow (Android 6.0) devices, the Physical Web requires that Chrome is granted the Location runtime permission.  If you have not already granted this permission, enabling the Physical Web privacy option will automatically prompt you to grant it.  This step is not necessary on pre-Marshmallow versions of Android.</p>
+    <img src="{% asset_path 'images/image13.png' %}" srcset="{% asset_path 'images/image13@2x.png' %} 2x" alt="On Marshmallow (Android 6.0) devices, the Physical Web requires that Chrome is granted the Location runtime permission.">
+  </li>
+  <li>
+    <h4>To see URLs when you are nearby a beacon in the future, swipe down on your notification shade to see a low priority notification informing you of nearby Physical Web URLs.</h4>
+    <img src="{% asset_path 'images/image14.png' %}" srcset="{% asset_path 'images/image14@2x.png' %} 2x" alt="swipe down on your notification shade to see a low priority notification">
+  </li>
+  <li>
+    <h4>Tap on notification. You will see a list of nearby URLs.</h4>
+  </li>
+</ol>
+<h2 id="issues">Potential Issues</h2>
+<ol>
+  <li>
+    <h4>I don’t see any URLs around after successfully going through these steps.</h4>
+    <p>It’s possible there aren’t any BLE beacons nearby. If you have a compatible Nexus device (Nexus 6, Nexus 9, Galaxy Note 4, Galaxy S6, Galaxy Tab S), you can create a virtual beacon using the <a href="https://play.google.com/store/apps/details?id=com.uriio">Beacon Toy app.</a> Otherwise, consider setting up your own beacon (see below).</p>
+    <p>Additionally, nearby broadcasted URLs must be public. The URL will be accessed by a Google service to resolve the URL and retrieve page metadata. If the page is not accessible from the Internet (for instance, it requires authentication or is only accessible from an internal network) then it will not appear in the list of results.</p>
+    <p>Finally, all URLs must resolve to an HTTPS URL. For our users’ security, we require all Physical Web pages be served over HTTPS. You may use a URL shortener that generates HTTP URLs as long as the shortened URL resolves to an HTTPS URL.</p>
+  </li>
+  <li>
+    <h4>On Android, sometimes I see URLs, but sometimes they don’t show up.</h4>
+    <p>There is a known issue that can cause the Physical Web list to be empty even after receiving a notification indicating that Physical Web pages are nearby. This can usually be resolved by refreshing the Physical Web list, but not always. As a workaround, force-quit Chrome and turn the device’s screen off and on again to trigger a new scan for nearby devices.</p>
+  </li>
+</ol>
+<h2 id="setting-up">Setting up your own beacon</h2>
+<p>If you’d like to set up your own Physical Web beacon, you can follow these steps below:</p>
+<ol>
+  <li><h4>Purchase an Eddystone certified beacon. You can choose from the list <a href="https://developers.google.com/beacons/">here</a>.</h4></li>
+  <li>
+    <h4>Download the beacon configuration app corresponding to your purchased beacon.</h4>
+  </li>
+  <li>
+    <h4>Open the configuration app and connect to your nearby beacon. Choose a URL to enter in the Eddystone URL field. Note that the URL length can only be 18 bytes, so you may need to use a URL shortener to compress your URL.</h4>
+  </li>
+  <li>
+    <h4>That’s it! Your beacon is now broadcasting URLs that can be discovered by Physical Web-supported browsers such as Chrome.</h4>
+  </li>
+</ol>
+        
