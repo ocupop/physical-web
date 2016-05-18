@@ -59,12 +59,23 @@ ol {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 3px 0;
   background-color: $grey-light;
   box-shadow: 0 -10px 15px 10px rgba(0,0,0,0.1);
   z-index: 999;
   @include transition();
+  .brand {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 150px;
+    height: 55px;
+    line-height: 55px;
+    @include transition(0.3s);
+    img {}
+  }
 }
+
 #page-content {
   background-color: #fff;
   margin-top: 50px;
@@ -105,12 +116,12 @@ ol {
   display: flex;
   flex-wrap: nowrap;
   box-sizing: border-box;
-  height: 60px;
   justify-content: flex-end;
-  @include transition(0.5s);
   a, span {
+    height: 60px;
     line-height: 60px;
     padding: 0 7px;
+    @include transition(0.5s);
   }
   span {
     font-style: italic;
@@ -122,7 +133,6 @@ ol {
     }
   }
 }
-//sidebar navigation
 #sidenav {
   width: 280px;
   height: 100%;
@@ -149,6 +159,35 @@ ol {
       ul {
         padding-left: 20px;
       }
+    }
+  }
+}
+#menu-toggle {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  border: 0;
+  width: 40px;
+  height: 55px;
+  text-indent: -999em;
+  z-index: 9999;
+  .sr {
+    position:absolute;
+    top:0;
+    left:0;
+  }
+  &:focus {
+    outline: 0;
+  }
+  .icon-menu {
+    span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      margin-bottom:3px;
+      background-color: $blue;
     }
   }
 }
@@ -229,47 +268,6 @@ ol {
 .content {
  position: relative;
  padding: $content-padding;
-}
-
-.brand {
-  img {
-    height: 45px;
-    display: block;
-    position: absolute;
-    top: 5px;
-    left: 37px;
-    @include transition(0.3s);
-  }
-}
-
-.menu-toggle {
-  position: fixed;
-  top: 18px;
-  left: 0;
-  z-index: 1000;
-  background: transparent;
-  border: 0;
-  width:30px;
-  height:18px;
-  text-indent: -999em;
-  display: none;
-  .sr {
-    position:absolute;
-    top:0;
-    left:0;
-  }
-  &:focus {
-    outline: 0;
-  }
-  .icon-menu {
-    span {
-      width:18px;
-      height: 2px;
-      margin-bottom:3px;
-      background-color: $blue;
-      display: block;
-    }
-  }
 }
 
 .no-svg {
@@ -463,10 +461,10 @@ body.homepage {
 body.condensed_header {
   #page-header {
     padding: 1px 0;
-  }
-  .brand {
-    img {
-      height: 35px;
+    .brand {
+      width: 120px;
+      height: 50px;
+      line-height: 50px;
     }
   }
   #mainnav {
@@ -526,7 +524,7 @@ body.condensed_header {
 
 @media (max-width: 1024px) {
 
-  .menu-toggle {
+  #menu-toggle {
     display: block;
   }
   #sidenav {
@@ -580,69 +578,6 @@ body.condensed_header {
       }
     }
   }
-
-  body {
-    &.condensed_header {
-      .brand {
-        img {
-          height: 25px;
-          top: 11px;
-        }
-      }
-    }
-  }
-
-  .animation, .message {
-    text-align: center;
-    .content {
-      padding: 20px;
-    }
-  }
-
-  #mainnav {
-    height: 50px;
-    span {
-      display: none;
-      line-height: 50px;
-    }
-    a {
-      font-size: 13px;
-      padding: 0 5px;
-      line-height: 50px;
-    }
-  }
-  .brand {
-    img {
-      height: 25px;
-      top: 11px;
-    }
-  }
-
-  #banner {
-    height: 180px;
-    padding-top:10px;
-    .container {
-      width: 100%;
-      height: 160px;
-      background-size: cover;
-    }
-  }
-
-  .animation, .message, .grid, .card {
-    width: 100%;
-  }
-
-  #explanatory {
-    svg {
-      width: 285px;
-      height: auto;
-    }
-  }
-
-  .row {
-    display: block;
-  }
-
   #page-footer {
     position:relative;
     z-index: 10;
@@ -657,6 +592,52 @@ body.condensed_header {
     }
   }
 
+  #mainnav {
+    // height: 50px;
+    span {
+      display: none;
+      // line-height: 50px;
+    }
+    a {
+      font-size: 13px;
+      padding: 0 5px;
+      // line-height: 50px;
+    }
+  }
+
+  #banner {
+    height: 180px;
+    padding-top:10px;
+    .container {
+      width: 100%;
+      height: 160px;
+      background-size: cover;
+    }
+  }
+
+  #explanatory {
+    svg {
+      width: 285px;
+      height: auto;
+    }
+  }
+
+  .animation, .message {
+    text-align: center;
+    .content {
+      padding: 20px;
+    }
+  }
+
+  .animation, .message, .grid, .card {
+    width: 100%;
+  }
+
+
+  .row {
+    display: block;
+  }
+
   .card {
     margin: 10px 0;
     padding: 0;
@@ -666,20 +647,32 @@ body.condensed_header {
   }
 }
 
-@media(max-width: 500px) {
+@media(max-width: 479px) {
   #mainnav {
-    span {
-      display: none;
-    }
     a {
+      height: 50px;
+      line-height: 50px;
       font-size: 12px;
       padding: 0 4px;
     }
   }
-  body.condensed_header .brand, .brand {
-    img {
-      height: 20px;
-      top: 14px;
+  body.condensed_header {
+    #page-header {
+      .brand {
+        width: 100px;
+        height: 50px;
+        line-height: 45px;
+      }
     }
+  }
+  #page-header {
+    .brand {
+      width: 100px;
+      height: 50px;
+      line-height: 45px;
+    }
+  }
+  #menu-toggle {
+    height: 50px;
   }
 }
