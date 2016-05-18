@@ -81,7 +81,7 @@ jQuery(document).ready(function($) {
   });
 
   // Collapsible SIDEBAR Menu
-  $('.menu-toggle').on('click', function(){
+  $('#menu-toggle').on('click', function(){
     $('#sidenav').toggleClass('open');
   });
 });
