@@ -2,25 +2,31 @@
 title: The Physical Web
 
 # Ocupop site
-baseurl: "/physical-web" # the subpath of your site, e.g. /blog
-url: "http://ocupopdev.com" # the base hostname & protocol for your site
+# baseurl: "/physical-web" # the subpath of your site, e.g. /blog
+# url: "http://ocupopdev.com" # the base hostname & protocol for your site
 
 # Localhost
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "localhost:4000/" # the base hostname & protocol for your site
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "localhost:4000/" # the base hostname & protocol for your site
 
 # Production to animohan github
 # baseurl: "/Physical-Web-Site"
 # url: "https://anirudhcmohan.github.io"
 
 # Production to physical web github
-# baseurl: "/physical-web"
-# url: "https://google.github.io"
+baseurl: "/physical-web"
+url: "https://google.github.io"
 
 # Build settings
 safe: false
 source: src
-destination: publish
+
+# Test environment
+# destination: publish
+
+# Production environment
+destination: publish-pw-site
+
 markdown: kramdown
 
 include: ["_pages"]
