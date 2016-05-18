@@ -3,14 +3,14 @@ layout: homepage
 ---
 <div id="banner">
   <div class="container">
-    <h2>Walk Up &amp; Use Anything</h2>
+    <h1>Walk up and use <i>anything</i></h1>
   </div>
 </div>
 <div id="page-content">
   <section class="grey-lighter">
     <div class="container">
       <div class="content text-center">
-        <h3>The Physical Web is an open source approach to unleash the core superpower of the web: interaction on demand. </h3>
+        <h3>The Physical Web is an open approach to enable quick and seamless interactions with physical objects and locations.</h3>
       </div>
     </div>
   </section>
@@ -23,8 +23,8 @@ layout: homepage
       </div>
       <div class="message">
         <div class="content" >
-          <h3>Everything a tap away</h3>
-          <p>Walk up and interact with any smart device—a vending machine, a poster, a toy, a bus stop, a rental car— without downloading an app first. Everything a tap away.</p>
+          <h3>Everything is a tap away</h3>
+          <p>Walk up and interact with any object -- a parking meter, a toy, a poster -- or location -- a bus stop, a museum, a store -- without installing an app first. Interactions are only a tap away.</p>
         </div>
       </div>
     </div>
@@ -38,8 +38,8 @@ layout: homepage
       </div>
       <div class="message">
         <div class="content">
-          <h3>Powerful &amp; pervasive</h3>
-          <p>Taken by itself, each of these examples are modestly useful. Taken as a whole, however, they imply a vast "long tail" where anything can offer information and utility.</p>
+          <h3>See what’s useful around you</h3>
+          <p>See web pages associated with the space around you. Choose the page most useful to you.</p>
         </div>
       </div>
     </div>
@@ -53,8 +53,8 @@ layout: homepage
       </div>
       <div class="message">
         <div class="content" >
-          <h3>Join in &mdash; build the Physical Web!</h3>
-          <p>We're developing the physical web out in the open as we do all things related to the web. While Google is creating an initial implementation, we hope others join in as well.</p>
+          <h3>Any object or place can broadcast content</h3>
+          <p>When <i>anything</i> can offer information and utility, the possiblities are endless.</p>
         </div>
       </div>
     </div>
@@ -69,10 +69,8 @@ layout: homepage
       <div class="message">
         <div class="content text-left">
           <div class="td">
-            <h3>How does it work?</h3>
-            <p>The Physical Web is powered by objects in the environment. A low-energy beacon broadcasts a url. A small utility on the phone scans for URLs that are nearby. We are using the open Eddystone-URL Bluetooth beacon format to find nearby URLs without requiring any centralized registrar. Here is a list of many beacon makers that are already supporting Eddystone. We also support finding URLs through Wifi using mDNS and uPnP.</p>
-            <h3>Why is this important?</h3>
-            <p>The number of smart devices is going to explode, and the assumption that each new device will require its own application just isn't realistic. We need a system that lets anyone interact with any device at any time. The Physical Web isn't about replacing native apps: it's about enabling interaction when native apps just aren't practical.</p>
+            <h3>How does this work?</h3>
+            <p>The Physical Web enables you to see a list of URLs being broadcast by objects in the environment around you. Any object can be embedded with a Bluetooth Low Energy (BLE) beacon, which is a low powered, battery efficient device that broadcasts content over bluetooth. Beacons that support the <a href="https://github.com/google/eddystone">Eddystone</a> protocol specification can broadcast URLs. Services on your device such as Google Chrome can scan for and display these URLs after passing them through a proxy.</p>
           </div>
         </div>
       </div>
@@ -81,7 +79,11 @@ layout: homepage
   <section>
     <div class="container">
       <div class="content text-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/1yaLPRgtlR0" frameborder="0" allowfullscreen></iframe>
+        <h3>Explore the Physical Web in 3 easy steps.</h3>
+        <h4><strong>Get beacons</strong>. <span class="smaller">On supported Android devices, you can use <a href="https://play.google.com/store/apps/details?id=com.uriio">Beacon Toy</a> to transform your phone into an Eddystone beacon. Otherwise, choose from a variety of <a href="https://developers.google.com/beacons/eddystone#full_support_for_eddystone">beacon manufacturers.</a> </span></h4>
+        <h4><strong>Configure beacons</strong>. <span class="smaller">You’ll have to select which URLs you’d like to broadcast (browsers such as Chrome only support HTTPS) and how far and often you want your beacons to <a href="{{site.baseurl }}/get-started#bluetooth-low-energy-ble-beacons">broadcast.</a> </span></h4>
+        <h4><strong>Deploy</strong>. <span class="smaller">Place your beacons in a physical space. Anyone who passes by with a Physical Web-compatible service will see your URL. </span></h4>
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/1yaLPRgtlR0" frameborder="0" allowfullscreen></iframe> -->
       </div>
     </div>
   </section>

@@ -1,45 +1,47 @@
 ---
 layout: sidebar
-title: "Get Started"
 toc: true
 ---
 
-<h2>Physical Web: How to Get Started as a Developer</h2>
-<p>If you have any questions, please reach out to <a href="mailto:animohan@google.com">animohan@google.com</a> or <a href="mailto:physical-web-discuss@googlegroups.com">physical-web-discuss@googlegroups.com</a>.</p>
+<h1>Getting started guide</h1>
+<p>Reach out to <a href="mailto:physical-web-discuss@googlegroups.com">physical-web-discuss@googlegroups.com</a> with any questions.</p>
 
-<h2 id="who">Who This Applies To</h2>
+<h2 id="who">Who this applies to</h2>
 <p>This guide is meant to be a tutorial for developers who are interested in the Physical Web and would like to deploy it to their users. </p>
 
 <h2 id="intro">Introduction</h2>
-<p>The vision of the Physical Web is to enable users to discover useful nearby web pages with their phones. For example, users could walk into a museum and learn more about the exhibits in front of them by being surfaced the relevant web pages. Alternately, users can easily pay for parking by walking by a parking meter and discovering the relevant payment page.</p> 
 <p>To distribute your web page over the Physical Web, you need two things: (1) a bluetooth low energy beacon (the backbone of the Physical Web) and (2) a URL. Depending on how beacons are configured and how many are used, various deployment options are possible. This guide will walk through these different options -- starting from a basic single beacon deployment and transitioning into a more complex multi-beacon, multi-URL deployment.</p>
 
 <h2 id="bluetooth">Bluetooth Low Energy (BLE) Beacons</h2>
 <p>BLE beacons are low powered devices that unidirectionally broadcast data for applications and devices to use. The Physical Web is built on top of beacons that broadcast over the Eddystone protocol. You can find a list of Eddystone-supported beacons here for your deployment.</p>
-<p>When you purchase your beacons, the manufacturer will recommend an application that can connect to the beacons and configure them. Below are the major configuration parameters that you can change for each beacon:</p>
+<p>When you purchase your beacons, the manufacturer will recommend an application that can connect to the beacons and configure them. Below are the major configuration parameters that you can change for each beacon.</p>
 <div class="panel">
   <h2>URL</h2>
   <p>This is the link to your webpage. The Physical Web on Chrome only supports HTTPS URLs. We recommend the URLs to have the following attributes to provide the best possible user experience:</p>
-  <p>Mobile-optimized, both for the user interface and navigation.</p>
-  <p>Single-purpose. Each should should cater to a single action (e.g. consume a piece of content, perform an action). Remember that users won’t be browsing to this page but instead will be arriving directly to it if they are nearby your beacon.</p>
-  <p>The Eddystone protocol provides 18 bytes for the URL packet, so you will likely need a URL shortener to compress the byte size of your URL if the beacon configuration application doesn’t automatically have one. If you anticipate needing to change your broadcast URLs frequently over time, consider using a URL shortener that allows you to update the end URLs later.</p>
+  <ul>
+    <li>Mobile-optimized, both for the user interface and navigation.</li>
+    <li>Single-purpose. Each should should cater to a single action (e.g. consume a piece of content, perform an action). Remember that users won’t be browsing to this page but instead will be arriving directly to it if they are nearby your beacon.</li>
+  </ul>
+  <p>The Eddystone protocol provides 17 bytes for the URL packet, so you will likely need a URL shortener to compress the byte size of your URL if the beacon configuration application doesn’t automatically have one. If you anticipate needing to change your broadcast URLs frequently over time, consider using a URL shortener that allows you to update the end URLs later.</p>
 </div>
 <div class="panel">
   <h2>Transmission Power</h2>
   <p>Beacons can vary their transmission power, typically from -40dbm to +4dbm. Note that power is a rough proxy for the transmission distance, which is ultimately a function of beacon antenna, phone antenna, beacon placement, and more. Our suggestions below are therefore rough guidelines.</p>
   <p>In general, we recommend setting the transmission power to be low, typically between -30db and -35db.</p>
   <p>This has 2 advantages:</p>
-  <p>it prolongs the beacon’s battery life</p>
-  ensures that users see your broadcast URL only when they are close to your device (thereby making your content more contextual).</p>
+  <ul>
+    <li>It prolongs the beacon’s battery life. </li>
+    <li>It ensures that users see your broadcast URL only when they are close to your device (thereby making your content more contextual). </li>
+  </ul>
   <p>However, there are certain situations where a higher transmission power may be desired such as covering a large space with a single URL.</p>
 </div>
 <div class="panel">
   <h2>Advertising Frequency</h2>
   <p>As a general rule, we recommend an advertising frequency of 700ms. 
-  <p>Most beacons can advertise in a range from as fast as every 100ms to as slow as every 10 seconds. You can go slower to save battery but scanning applications such as Chrome may not reliably surface your URLs to users if the frequency is much slower than 1 second. You can certainly go faster than 700ms, you’ll just waste battery life and increase the chance for collisions in busy beacon spaces.</p>
+  <p>Most beacons can advertise in a range from as fast as every 100ms to as slow as every 10 seconds. Going slower can save battery life but scanning applications such as Chrome may not reliably surface URLs to users if the frequency is much slower than 1 second. Going faster than 700ms is possible too, although this will reduce the beacon's battery life.</p>
 </div>
 
-<h2 id="deploying">Deploying Beacons</h2>
+<h2 id="deploying">Deploying beacons</h2>
 <p>The complexity of your deployment will depend on how many beacons you’ll deploy and how many distinct URLs you plan to broadcast. Below, we summarize the different deployment options and which use cases they typically pertain to.</p>
 <div class="break-60 center-block">
   <img src="{% asset_path 'images/beacon-graphic.svg' %}" alt="Deploying Beacons Infographic">
@@ -64,7 +66,6 @@ toc: true
 <h2 id="managing-content">Managing content</h2>
 <p>For certain deployments, you might want to change the broadcast URLs after initial configuration. One example is a large retailer that has deployed beacons across a variety of stores and wants to continually update the broadcast URLs regularly to reflect new content. While it is possible for you to continually re-configure the beacons with a new URL, it requires you to be within bluetooth broadcast range.</p>
 
-<h3>YOURLS</h3>
 <p>For larger beacon deployments, we recommend using a URL shortener that enables you to later edit the destination URL. Many Eddystone certified <a href="https://developers.google.com/beacons/">beacon manufacturers</a> include their own URL management solutions. In addition, we’ve included below a few well known URL shorteners that offer editing of the destination URL -- note that it is not meant to be an exhaustive list:</p>
 <ul>
   <li><a href="http://tiny.cc/">tiny.cc</a></li>

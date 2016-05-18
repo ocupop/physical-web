@@ -1,7 +1,14 @@
 # Site settings
-title: Google Physical Web
-baseurl: "/physical-web" # the subpath of your site, e.g. /blog
-url: "http://ocupopdev.com" # the base hostname & protocol for your site
+title: The Physical Web
+# Localhost
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "localhost:4000/" # the base hostname & protocol for your site
+
+# Production to animohan github
+baseurl: "/Physical-Web-Site"
+url: "https://anirudhcmohan.github.io"
+
+# Production to physical web github
 
 # Build settings
 safe: false

@@ -1,65 +1,55 @@
 ---
 layout: sidebar
-title: "Examples"
 toc: true
 ---
-<h2>Examples</h2>
-<p>The Physical Web is an approach to unleash the core superpower of the web: interaction on demand. People should be able to walk up to any smart device - a vending machine, a poster, a toy, a bus stop, a rental car - and not have to download an app first. Everything should be just a tap away. The Physical Web is actually fairly simple. It has just two main parts:</p>
-<ul>
-<li>a wirelessly broadcasted URL</li>
-<li>software on a device that detects and displays the URL when requested</li>
-</ul>
-<p>This document shows you simple patterns of use, giving you a range of ways to use the Physical Web in your projects.</p>
+<h1>Examples</h1>
+<p>We want to show you simple patterns of use for the Physical Web, highlighting a range of ways you can use it.
+</p>
 
-<p>The Physical Web is not a Google proprietary project. This is an open approach based on URLs and the web which can be used by anyone.</p>
 
-<h2 id="getting-started">Getting Started with the Physical Web</h2>
-<p>To get started with the Physical Web, all you need is a Bluetooth Low Energy (BLE) beacon that supports Eddystone-URL and a website. Simply follow your specific beacon's instructions to configure the URL to your website, place the beacon and that's it: you're now part of the Physical Web!</p>
-
-<h2 id="simple-static-beacon">Simple Static Beacon</h2>
-<p>With just a webpage and a beacon, you can quickly create what we call a simple static beacon, where the broadcasted URL points to an informational webpage. Here are a couple examples:</p>
+<h2 id="simple-static-beacon">Informational content</h2>
+<p>With just a web page and a beacon, you can annotate a place or an object with informational content. Below are a few examples.
+</p>
 
 <h4>Info Page</h4>
-<p>The beacon broadcasts a URL that points to a page with relevant information. For example, a movie poster points to a page with the movie's trailer and showtimes. An identifier for the movie poster's location can be encoded into the broadcasted URL such that the webpage can filter for only show times that are nearby.</p>
+<p>The beacon might broadcast a URL that points to a page with relevant information. For example, a movie poster could point to a page with the movie's trailer and showtimes. An identifier for the movie poster's location can be encoded into the broadcasted URL such that the webpage can filter for theatres nearby.
+</p>
 
 <h4>Swarm Page</h4>
-<p>Several beacons are placed into a space that is too large to be covered by a single beacon, and each broadcasts exactly the same URL. The user's mobile device will only show the URL once in the results list, so no need to worry about duplication. This technique is useful for a mall with an interactive mobile map or a large retail space with an in-store website.
+<p>Several beacons are placed into a space that is too large to be covered by a single beacon, and each broadcasts exactly the same URL. The user’s mobile device will de-duplicate URLs and only show one listing on the user’s device. For example, a mall could use this technique to cover a large space and surface its interactive map.
 </p>
 
 <h4>Moving Beacon</h4>
-<p>Beacons don't have to be stationary either. A dog collar could link to a page for of basic information. However, if the dog is lost, the owner can call into the the service and update the page.
+<p>Beacons don't have to be stationary. A dog collar, for example, could broadcast a URL providing basic information about the dog. If the dog is lost, its owner can update the page to reflect this status. Individuals who discover the nearby URL can then learn that the dog is lost and take appropriate action:
 </p>
+
 <div class="embed-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/-Y77cUI_z30" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
-<h2 id="dive-deeper">Let's Dive Deeper</h2>
-<p>We can build even more compelling experiences when we introduce a link between the Physical Web object and the webpage loaded on the user's device.</p>
+<h2 id="dive-deeper">Richer experiences</h2>
+<p>More compelling and interactive experiences are possible when the broadcasted page is a web application using modern features of the web platform. Below are a few examples.
+</p>
 
-<h4>Active Web Server</h4>
-<p>Instead of a static informational page, the beacon broadcasts the URL of a web app that uses more advanced web technologies to offer interactive experiences. Here are a couple examples:</p>
 
 <h4>Push Notifications</h4>
-<p>The beacon broadcasts the URL of a webpage that implements a Service Worker with push notifications. For example, a restaurant can create a queueing system that doesn't require the user to ask the hostess for a piece of plastic with a buzzer and LEDs in it. Instead, the user easily opens up the queuing web app, grabs a spot in a digital line, and gets notified when the time is right.
+<p>The beacon might broadcast the URL of a web page that implements push notifications via a <a href="http://www.html5rocks.com/en/tutorials/service-worker/introduction/">service worker</a>. For example, a restaurant could create a queuing application to alert customers when their table is ready (thereby replacing its LED buzzers!). Users can open the queuing web application, take a “digital spot” in line, and get a notification when their table is ready:
 </p>
-<p>Here is a demo of how this could work:</p>
 
 <div class="embed-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/b0GDk-53fTo" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
 <h4>Parking Meter</h4>
-<p>The parking meter has a radio antennae providing internet access. The beacon within points to a webpage (with the meter's ID encoded in the URL) that uses websockets to connect to the parking meter. From this webpage, the user can easily use credit card autofill or other online payment APIs to add time to the meter.</p>
-
-<p>Here is a demo of how this could work:</p>
+<p>An internet-connected parking meter could broadcast a URL that uses websockets to directly connect to the parking meter. From the web page, the user can fulfill a payment transaction to add additional time to the meter:
+</p>
 
 <div class="embed-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/ysxB_PXFImE" frameborder="0" allowfullscreen=""></iframe>
 </div>
-<br><br>
 
 <h4>Voting Wall</h4>
-<p>The Physical Web doesn't need to be a 1:1 ratio of 1 device to 1 person. Everyone in a room could access the same link to a voting wall. People could vote up and down questions as they are asked. Here is a demo of how that could work:
+<p>Individuals could walk up to an interactive voting wall and vote up questions as they are asked:
 </p>
 
 <div class="embed-container">
@@ -67,28 +57,32 @@ toc: true
 </div>
 
 <h4>Photo Wall</h4>
-<p>In this case, a large display acts as a photo wall, you just need to take out your phone, choose the photo wall and either browse the existing photos or add one yourself to the wall. 
+<p>A large display could act as an interactive photo wall, where users walking nearby can upload their photos. Users would simply have to take our their phone, find the photo wall via the Physical Web, and add a photo: 
 </p>
 
 <div class="embed-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/-e7yWs38UIQ" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
-<h2 id="new-possibilities">New possibilities with Web Bluetooth</h2>
-<p>A standardized open web JavaScript Bluetooth API is currently in the works. This API will allow webpages to directly connect to nearby Bluetooth devices.</p>
+<h2 id="new-possibilities">Web Bluetooth</h2>
 
-<p>Web Bluetooth enables devices to offer advanced interactions without requiring a connection to the internet. For example, the parking meter from the active web server section above could be implemented with only a direct Bluetooth connection and with no internet connection of its own. A direct Bluetooth connection can also be much faster than passing interaction through the cloud, since network latency is avoided. Not to mention, a Bluetooth antenna is much cheaper than providing internet-connectivity, enabling more ubiquitous interactivity in everyday devices:</p>
+<p>A new experimental web API called <a href="https://github.com/WebBluetoothCG/web-bluetooth">web bluetooth</a> will enable web pages to connect directly to nearby Bluetooth devices. 
+</p>
 
-<h4>Happy Meal Toy</h4>
-<p>In this example, the toy broadcasts a URL to a webpage that contains JavaScript to directly connect to the toy via Bluetooth.The toy is a standalone device that can be played with by youngsters, while the webpage interaction lets the parent easily configure and personalize the toy.</p>
+<p>Web bluetooth enables devices to offer advanced interactions without requiring a connection to the internet. For example, the previously mentioned parking meter could directly connect to the user’s mobile device over bluetooth. A direct bluetooth connection between an object and a mobile device reduces network latency and offers an inexpensive way to enable more ubiquitous interactivity.
+</p>
+
+<h4>Children's Toy</h4>
+<p>A toy might broadcast a URL to a web page that enables direction connection to the toy itself. Parents could easily configure and personalize the toy from the page:
+</p>
+
 <div class="embed-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/PwK3ccOJ6EY" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
 <h4>Remote Control</h4>
-<p>This uses the same technique as the Happy Meal Toy but in this case, we are controlling an existing toy you can buy off the shelf. The company has documented their control API and it's easy to connect and control the toy from a web page using the Web Bluetooth Javascript API:
+<p>A toy might broadcast a URL to a web page that enables you to control and steer it directly via the web bluetooth API:
 </p>
 <div class="embed-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/6z9ED4fmi1w" frameborder="0" allowfullscreen=""></iframe>
 </div>
-<p>To learn more, visit the <a href="http://www.github.com/google/physical-web">project on GitHub</a></p>

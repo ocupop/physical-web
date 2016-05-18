@@ -36,12 +36,10 @@ iframe {
 
 ol {
   padding-left: 15px;
-  font-weight: bold;
   li {
-    font-size: 21px;
     img {
       display: block;
-      margin: 0 auto 10px auto;
+      margin: 10px auto 10px auto;
       max-width: 100%;
     }
     p {
@@ -162,7 +160,7 @@ ol {
     background: url('{% asset_path "images/bg-banner.svg" %}') no-repeat center center;
     background-size: contain;
     height: 280px;
-    h2 {
+    h1 {
       display: table-cell;
       vertical-align: middle;
       position: relative;
@@ -198,6 +196,11 @@ ol {
  max-width: 100%;
  width: $live-content-width;
  margin: 0 auto;
+}
+
+.smaller {
+  font-size: 80%;
+  color: $grey;
 }
 
 .row {
@@ -437,6 +440,9 @@ body.homepage {
   }
   h3 {
     color: $grey-dark;
+  }
+  h4 {
+    color: $grey-dark;  
   }
   section {
     background-color: $grey-light;

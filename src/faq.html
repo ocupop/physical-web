@@ -10,86 +10,86 @@ layout: default
           <h1>FAQs</h1>
           <ul class="faq-list">
             <li>
-              <a class="toggle-faq">Wait, why are you an app?</a>
+              <a class="toggle-faq">Why is the Physical Web built on top of the web?</a>
               <div>
-                <p>This is an early prototype. We are trying to get people to experiment with this at an early stage. Of course, this should be built into all smartphones (and tablets and anything with a screen really). We are building an app for now that tries to not feel like an app. It works in the background so you don't need to use it actively. It just silently monitors beacons that you can browse when you're interested.</p>
-              </div>
-            </li>
-            <li>
-              <a class="toggle-faq">Will you be pestering people with alarms?</a>
-              <div>
-                <p>A core principle of this system is no proactive notifications. The user will only see a list of nearby devices when they ask. If your phone were to be buzzing constantly as you walked through the mall, it would be very frustrating. Push notifications in general are too easily abused. Of course, the user can opt-in to notifications, we are just saying that by default, the user must ask to see anything nearby.</p>
-
-                <p>In addition, we only scan when the screen is on: there is no scanning that goes on when the phone is in your pocket. This is consistent with our 'no interruptions' goal but it also has a large positive impact on power usage. Using this app should have very little impact on your phone's battery life.</p>                
-              </div>
-            </li>
-            <li>
-              <a class="toggle-faq">Isn't there going to be a big list to choose from?</a>
-              <div>
-                <p>At first, the nearby smart devices will be small but if we're successful, there will be many to choose from and that raises an important UX issue. This is where ranking comes in. Today, we are perfectly happy typing "tennis" into a search engine and getting millions of results back, we trust that the first 10 are the best ones. The same applies here. The phone agent can sort by both signal strength as well as personal preference and history, among many other possible factors. Clearly there is lots of work to be done here. We don't want to minimize this task, but we feel that this simple signal strength ranking can get us very far for the first few versions of this project.</p>
-              </div>
-            </li>
-            <li>
-              <a class="toggle-faq">Is this secure/private?</a>
-              <div>
-                <p>URLs broadcast in the clear so anyone can see them. This is by design. That is why we're initially suggesting this to be used in public spaces. This does raise issues for home use where it would be possible for neighbors to intercept beacons. However, one of the big advantages of URLs is that there are so many ways they can be used to increase their security:</p>
+                <p>The Physical Web’s core value proposition is to enable users to have information at their fingertips no matter their physical context. This information can take the form of a simple static web page to a more robust web application. A few examples might include:</p><br>
                 <ul>
-                  <li>The URL could be obfuscated (e.g. using a non-branded domain)</li>
-                  <li>The web page could require a login</li>
-                  <li>A rotating token on the beacon would constantly change the URL</li>
-                  <li>The URL could reference an IP address that is only accessible when connected to a local network</li>
-                </ul>
-                <p>One of the big values of URLs is that they are so flexible and encourage this further evolution.</p>
-              </div>
-            </li>
-            <li>
-              <a class="toggle-faq">What about SPAM?</a>
-              <div>
-                <p>With any system, there will be people that try to exploit it. There will likely be many solutions around this problem but again, we can start with the web. Search engines today have this issue and are fairly effective and displaying the correct web sites in your search results. That same approach would apply here. Combine that with historical results of who clicks on what and it's possible to build a fairly robust ranking model and only show the proper devices. However, there is likely much more we can do here and we hope to encourage other ideas on how to solve this problem in a more robust way.</p>
-              </div>
-            </li>
-            <li>
-              <a class="toggle-faq">Why URLs?</a>
-              <div>
-                <p>The value of a URL is that it is a known part of the web, very flexible, and most importantly, decentralized. URLs allow anyone to play and no central server to be the bottleneck. This is one of the core principles of the web and critical to keep alive.</p>
-
-                <p>That being said, we completely expect others to experiment with a url+ID model that goes through their server (e.g. safeurls.com/?id=12345). That is perfectly acceptable and to be encouraged. Systems like that are likely to provide much better security and vetting of sites. But that is the beauty of URLs, there can be as many of these as you'd like and the system still works seamlessly.</p>
-              </div>
-            </li>
-            <li>
-              <a class="toggle-faq">Why the web?</a>
-              <div>
-                <p>The Physical Web’s primary value is to enable a device to place at users’ fingertips anything from a tiny piece of location-based information to a full blown web app.</p>
-                <ul>
-                  <li>A dog collar could let you call a service to find the owner.</li>
-                  <li>A bus could tell you its next stop.</li>
-                  <li>A city rent-a-bike service could let you sign up on the spot.</li>
+                  <li>A dog collar could allow passerby to call a service to find the owner</li>
+                  <li>A bus that could alert users of its next stop</li>
+                  <li>A city rent-a-bike service could enable users to sign up on the spot</li>
                   <li>A home appliance could offer an interactive tutorial.</li>
                   <li>An industrial robot could display diagnostic information.</li>
-                  <li>A mall could offer a map.</li>
+                  <li>A mall that could offer a map.</li>
+                </ul><br>
+                <p>Each of these examples, taken by itself, is modesty useful. In the aggregate, they imply a vast “long tail” of interaction where anything can offer information and utility. The web enables the low friction and ephemerality to enable this kind of interaction on demand.</p>
+              </div>
+            </li>
+            <li>
+              <a class="toggle-faq">Why does the Physical Web use URLs?</a>
+              <div>
+                <p>URLs are the fundamental building blocks of the web -- they are both flexible and decentralized. URLs allow any developer to have a digital presence without requiring a central gatekeeper to bottleneck access to the ecosystem. This is a core principle of the web and one that the Physical Web leverages to lower the barrier to entry.</p><br>
+                <p>The flexibility of URLs affords the opportunity to experiment with URL + ID models that utlimately do utilize a central server (e.g. exampleserver.com/?id=12345). In many ways, this highlights how URLs can be scaled to a variety of use cases.</p>
+              </div>
+            </li>
+            <li>
+              <a class="toggle-faq">Why does Physical Web used Bluetooth Low Energy? </a>
+              <div>
+                <p>There are many ways to broadcast a URL. Today, the Physical Web uses Bluetooth Low Energy (BLE) because of its ubiquity on mobile devices today. Additionally, it is highly energy efficient -- many bluetooth beacons today have multi-year battery lives.</p><br>
+                <p>However, this does not preclude the possibility of Physical Web catering to alternate transport protocols in the future. Early potential options include mDNS and uPnP over WiFi.</p>
+              </div>
+            </li>
+            <li>
+              <a class="toggle-faq">What does the openness of the Physical Web refer to?</a>
+              <div>
+                <p>The Physical Web is designed to be interoperable at every level of the stack -- from the beacons used to broadcast URLs to scanners used to gather these URLs to the proxy used to filter and sort URLs. Users will ultimately be able to choose which services are appropriate for their use case.</p><br>
+                <p>In this vein, we have also open sourced sample implementations of Physical Web scanners for iOS and Android, along with an open source proxy service. These are included in our <a href="https://github.com/google/physical-web">Github</a>.</p>
+              </div>
+            </li>
+            <li>
+              <a class="toggle-faq">How does the Physical Web address potential security concerns?</a>
+              <div>
+                <p>URLs in the Physical Web are broadcast such that any device with a Physical Web scanner can detect them. The use of a proxy service prevents a beacon deployer from monitoring each event in which a user passes by the beacon. Additionally, Physical Web deployments are encouraged only in public spaces.</p><br>
+                <p>The Physical Web also benefits from the web security model, given that it is built on top of URLs. Some of these benefits include:</p><br>
+
+                <ul>
+                  <li>Certain implementations of the Physical Web require that the broadcast URL be over HTTPS (e.g. Chrome)</li>
+                  <li>The URL could be obfuscated (e.g. using a non-branded domain)</li>
+                  <li>A rotating token on the beacon would constantly alter the URL</li>
+                  <li>The web page could require a login</li>
                 </ul>
-                <p>Each of these examples, taken by itself, is modestly useful. Taken as a whole, however, they imply a vast “long tail” where anything can offer information and utility. Native apps are great for high frequency usage. The web enables people to walk up and use something once with hardly any friction.</p>
+
               </div>
             </li>
             <li>
-              <a class="toggle-faq">Which platforms will you support?</a>
+              <a class="toggle-faq">How does the Physical Web address potential spam?</a>
               <div>
-                <p>This is meant to be an extension of the web so it should work on every platform. We expect that each platform will experiment with a different UX to show the nearby devices. For example, the current Android app uses notifications while the iOS app will use lock screen notifications. We hope to see lots of experimentation here on how various platforms choose to show and rank this information.</p>
-                <p>At this point, we have both an Android and iOS app that is open source. We hope this will be used and ported to other platforms.</p>
+                <p>The proxy service used plays the role of a spam filter -- malicious URLs will be filtered away, and less valuable and useful URLs will be displayed lower in the list of URLs. This service is in many ways analogous to a search engine, which is tasked with minimizing spam by providing super ranking of results. Over time, the proxy service will improve in its ability to rank down spam.</p>
               </div>
             </li>
             <li>
-              <a class="toggle-faq">Can't the user be tracked?</a>
+              <a class="toggle-faq">How can Physical Web results be viewed?</a>
               <div>
-                <p>Our current URL broadcast method involves a bluetooth broadcast from each beacon. The user's phone gathers this info without connecting to the beacon. This ensures the user is invisible to all beacons, meaning a user can't be tracked simply by walking past a broadcasting beacon. This was very much by design to keep users silent passage untrackable. However, once the user does click on a URL, they are then known to that website.</p>
-                <p>The search agent on the phone may keep track of which devices the user taps on so they can improve the ranking in the future. Of course, this too needs to be discussed and then possibly offered to the user as an option so they are in control of how this information is stored.</p>
+                <p>Different implementations of the Physical Web might offer different user experiences for users to discover nearby URLs.</p><br>
+
+                <p>For example, on Android, the open source implementation and the <a href="{{site.baseurl }}/try-physical-web">Chrome implementation</a> surface Physical Web results via low priority notifications, which do not vibrate the user’s device. This ensures that the user’s workflow is not interrupted and that results appear only when the user proactively seeks them out.</p>
               </div>
             </li>
             <li>
-              <a class="toggle-faq">Why Bluetooth Low Energy?</a>
+              <a class="toggle-faq">Will the Physical Web display a very long list of URLs to the user?</a>
               <div>
-                <p>There are many possible ways to broadcast a URL. This initial version uses Bluetooth Low Energy (BLE) as it is so ubiquitous on mobile phones and tablets today. In addition, it is very energy efficient. There are tiny BLE devices that can broadcast for nearly 2 years on a single coin cell. We are using the standard BLE 'ad packet' to broadcast out this URL so every device that supports bluetooth can receive it.</p>
-                <p>However, we also support mDNS and uPnP over wifi. We are not limited to BLE, it is just the starter technology. We expect other ways of discovering URLs will be added over time.</p>
+                <p>Today, there is not a large number of beacons in the environment, but over time, this number will increase if the Physical Web gains in prominence. Proxy services will play the role of not only filtering unwanted URLs but also ranking and sorting URLs that users see. Over time, these will grow in sophistication to rank URLs in the order of usefulness to the user, using signals such as distance between the user’s device and the nearby beacon.</p>
+              </div>
+            </li>
+            <li>
+              <a class="toggle-faq">How does Physical Web affect battery life?</a>
+              <div>
+                <p>Ultimately, this is dependent on the design of the Physical Web implementation. The open source and Chrome implementations only scan for nearby beacons when the device screen is on, which significantly reduces the battery impact.</p>
+              </div>
+            </li>
+            <li>
+              <a class="toggle-faq">Which platforms are supported?</a>
+              <div>
+                <p>Both iOS and Android offer bluetooth scanning APIs at the platform level on which Physical Web clients can be built. The open source Physical Web implementations on <a href="https://github.com/google/physical-web">Github</a> include both iOS and Android. Additionally, the Chrome implementation of Physical Web is available on iOS and Android.</p>
               </div>
             </li>
           </ul>
