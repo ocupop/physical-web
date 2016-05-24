@@ -346,6 +346,15 @@ ol {
   color: $white;
 }
 
+.highlight {
+  background-color: $blue;
+  padding: 20px;
+  margin-bottom: 20px;
+  h1, h2, h3, h4, h5, h6, p {
+    color: $white;
+  }
+}
+
 
 /* -----------------------------------------
  Table of Contents
