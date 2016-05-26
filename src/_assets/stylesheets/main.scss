@@ -580,6 +580,7 @@ body.condensed_header {
       left: 80px;
     }
   }
+  #mainnav { display: none; }
   #menu-toggle {
     display: block;
   }
@@ -608,6 +609,9 @@ body.condensed_header {
           &:hover {
             color: #ffffff;
           }
+        }
+        &.toc-entry.toc-h3 {
+          display: none;
         }
       }
     }
