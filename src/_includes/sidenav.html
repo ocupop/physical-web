@@ -4,6 +4,8 @@
     <li><a href="{{ site.baseurl }}/faq">FAQ</a></li>
     <li><a href="{{ site.baseurl }}/examples">Examples</a></li>
   </ul>
-  <h4>{{ page.title }}</h4>
-  {{ content | toc_only }}
+  {% if page.layout == 'sidebar' %}
+    <h4>{{ page.title }}</h4>
+    {{ content | toc_only }}
+  {% endif %}
 </nav>

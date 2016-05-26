@@ -171,6 +171,9 @@ ol {
       display: block;
     }
   }
+  &.open {
+    left: 0 !important;
+  }
 }
 #menu-toggle {
   display: none;
@@ -467,9 +470,17 @@ ol {
 /* -----------------------------------------
  Page States
  ----------------------------------------- */
+body.default {
+  #sidenav {
+    left: -320px;
+  }
+}
 body.homepage {
   #page-content {
     margin-top: 0;
+  }
+  #sidenav {
+    left: -320px;
   }
   h3 {
     color: $grey-dark;
