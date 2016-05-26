@@ -1,5 +1,6 @@
 @import '_variables';
 @import '_mixins';
+@import '_icons';
 @import '_animations';
 @import '_animated';
 @import '_faq';
@@ -242,6 +243,14 @@ ol {
   Utility Classes
   ----------------------------------------- */
 
+.main {
+  margin: 0 0 0 280px;
+  width: calc(100% - 280px);
+  .container {
+    max-width: 90%;
+  }
+}
+
 .container {
  position: relative;
  max-width: 100%;
@@ -360,38 +369,10 @@ ol {
 
 .highlight {
   background-color: $blue;
-  padding: 20px;
+  padding: 20px 30px;
   margin-bottom: 20px;
   h1, h2, h3, h4, h5, h6, p {
     color: $white;
-  }
-}
-
-
-/* -----------------------------------------
- Table of Contents
- ----------------------------------------- */
-.toc-entry.toc-h2 {}
-.toc-entry.toc-h3 {
-  a {
-    padding-left: 20px;
-    font-size: 17px !important;
-    font-weight: 200 !important;
-  }
-}
-.toc-entry.toc-h1,
-.toc-entry.toc-h4,
-.toc-entry.toc-h5,
-.toc-entry.toc-h6,
-.no_toc {
- display: none;
-}
-
-.main {
-  margin: 50px 0 0 280px;
-  width: calc(100% - 280px);
-  .container {
-    max-width: 90%;
   }
 }
 
@@ -453,6 +434,39 @@ ol {
   }
 }
 
+.nav {
+  list-style: none;
+  .icon-check {
+    margin-right: 5px;
+    font-size: 24px;
+    vertical-align: middle;
+    line-height: 30px;
+    color: $blue;
+  }
+}
+
+/* -----------------------------------------
+ Table of Contents
+ ----------------------------------------- */
+.toc-entry.toc-h2 {}
+.toc-entry.toc-h3 {
+  a {
+    padding-left: 20px;
+    font-size: 17px !important;
+    font-weight: 200 !important;
+  }
+}
+.toc-entry.toc-h1,
+.toc-entry.toc-h4,
+.toc-entry.toc-h5,
+.toc-entry.toc-h6,
+.no_toc {
+ display: none;
+}
+
+/* -----------------------------------------
+ Page States
+ ----------------------------------------- */
 body.homepage {
   #page-content {
     margin-top: 0;
