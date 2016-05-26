@@ -48,6 +48,14 @@ ol {
     }
   }
 }
+blockquote {
+  padding: 10px 5px;
+  margin: 30px 0;
+  font-size: 24px;
+  line-height: 37px;
+  border-top: 1px solid $grey;
+  border-bottom: 1px solid $grey;
+}
 
 /* -----------------------------------------
   DOM
@@ -374,8 +382,11 @@ ol {
   background-color: $blue;
   padding: 20px 30px;
   margin-bottom: 20px;
+  font-size: 21px;
+  color: #ffffff;
   h1, h2, h3, h4, h5, h6, p {
     color: $white;
+    text-align: center;
   }
 }
 
@@ -436,9 +447,15 @@ ol {
     padding: 10px 0;
   }
 }
+.lead {
+  font-size: 24px;
+  margin-bottom: 0.25em;
+}
 
 .nav {
   list-style: none;
+  padding: 0;
+  margin: 0;
   .icon-check {
     margin-right: 5px;
     font-size: 24px;
