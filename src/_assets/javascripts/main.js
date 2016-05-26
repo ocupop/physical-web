@@ -84,5 +84,8 @@ jQuery(document).ready(function($) {
   $('#menu-toggle').on('click', function(){
     $('#sidenav').toggleClass('open');
   });
+  $('#page-content, #page-header').on('click', function(){
+    $('#sidenav').removeClass('open');
+  });
 });
 
