@@ -1,0 +1,20 @@
+---
+layout: default
+title: Case Studies
+---
+<div class="container">
+  <div class="content">
+    <div class="grid">
+      <h1>Case Studies</h1>
+      {% for study in site.data.case-studies %}
+        <div class="card">
+          <div class="content">
+            <h2>{{ study.title }}</h2>
+            <p>{{ study.description }}</p>
+            <a href="{{ site.baseurl }}{{ study.url }}" class="button">Read More</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

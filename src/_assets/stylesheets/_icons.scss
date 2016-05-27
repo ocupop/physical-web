@@ -1,5 +1,7 @@
 
+$icon-external: "\e902";
 $icon-check: "\e900";
+
 
 @font-face {
     font-family: 'physical-web';
@@ -27,10 +29,14 @@ $icon-check: "\e900";
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-external {
+    &:before {
+        content: $icon-external;
+    }
+}
 .icon-check {
     &:before {
         content: $icon-check;
     }
 }
-
 

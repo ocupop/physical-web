@@ -1,14 +1,11 @@
 ---
 layout: default
 ---
-<div class="two-column-layout">
-  <div class="row">
-    <div class="main">
-      <div class="container">
-        <div class="content">
-          {{ content | inject_anchors }}
-        </div>
-      </div>
-    </div>
+<div class="container">
+  <div class="content">
+    {{ content | inject_anchors }}
   </div>
 </div>
+
+<h4>{{ page.title }}</h4>
+{{ content | toc_only }}

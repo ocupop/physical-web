@@ -1,11 +1,59 @@
 <nav id="sidenav">
   <ul>
-    <li><a href="{{ site.baseurl }}/resources">Resources</a></li>
-    <li><a href="{{ site.baseurl }}/faq">FAQ</a></li>
-    <li><a href="{{ site.baseurl }}/examples">Examples</a></li>
+    {% for link in site.data.navigation  %}
+      {% capture dropdown %}{{ link.children | size }}{% endcapture %}
+      {% unless link.url contains 'http' %}
+        {% capture path %}{{ site.baseurl }}{{ link.url }}{% endcapture %}
+      {% else %}
+        {% capture path %}{{ link.url }}{% endcapture %}
+      {% endunless %}
+
+      {% if dropdown == '0' %}
+        {% if page.url == link.url %}
+        <li class="active">
+          <h4>{% if link.label %}{{ link.label }}{% else %}{{ link.title }}{% endif %}</h4>
+          {% if page.layout == 'sidebar' %}
+            {{ content | toc_only }}
+          {% endif %}
+        </li>
+        {% else %}
+        <li>
+          <a href="{{ path }}" title="{{ link.title }}">
+            {% if link.label %}{{ link.label }}{% else %}{{ link.title }}{% endif %}
+          </a>
+        </li>
+        {% endif %}
+      {% else %}
+        <li {% if page.url contains link.url %}class="active"{% endif %}>
+          <a href="{{ path }}" title="{{ link.title }}">
+            {% if link.label %}{{ link.label }}{% else %}{{ link.title }}{% endif %}
+          </a>
+          <ul>
+            {% for child in link.children %}
+            {% unless child.url contains 'http' %}
+              {% capture childpath %}{{ site.baseurl }}{{ child.url }}{% endcapture %}
+            {% else %}
+              {% capture childpath %}{{ child.url }}{% endcapture %}
+            {% endunless %}
+
+              {% if page.url == child.url %}
+                <li class="active">
+                  <h4>{% if child.label %}{{ child.label }}{% else %}{{ child.title }}{% endif %}</h4>
+                  {% if page.layout == 'sidebar' %}
+                    {{ content | toc_only }}
+                  {% endif %}
+                </li>
+                {% else %}
+                <li>
+                  <a href="{{ childpath }}" title="{{ child.title }}">
+                    {% if child.label %}{{ child.label }}{% else %}{{ child.title }}{% endif %}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+    {% endfor %}
   </ul>
-  {% if page.layout == 'sidebar' %}
-    <h4>{{ page.title }}</h4>
-    {{ content | toc_only }}
-  {% endif %}
 </nav>

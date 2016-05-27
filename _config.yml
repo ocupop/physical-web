@@ -16,6 +16,7 @@ title: The Physical Web
 # Production to physical web github
 baseurl: "/physical-web"
 url: "https://google.github.io"
+permalink: /:path
 
 # Build settings
 safe: false

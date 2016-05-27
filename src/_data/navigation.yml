@@ -1,0 +1,27 @@
+- title: Resources
+  label:
+  url: /resources
+  children:
+    - title: Get Started
+      label:
+      url: /get-started
+    - title: Physical Web in Chrome
+      label:
+      url: /try-physical-web
+    - title: Configure Beacons
+      label:
+      url: "http://cf.physical-web.org/"
+    - title: Explore Open Source
+      label:
+      url: "https://github.com/google/physical-web"
+    - title: How it Works
+      label:
+      url: "https://www.youtube.com/embed/1yaLPRgtlR0"
+- title: Frequently Asked Questions
+  label: FAQ
+  url: /faq
+  children:
+- title: Examples
+  label:
+  url: /examples
+  children:

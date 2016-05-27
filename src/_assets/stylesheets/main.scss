@@ -29,6 +29,22 @@ h6, .h6 { font-size: $font-size-h6; font-family: $font-family-heading; }
 a {
   color: $blue;
   text-decoration: none;
+  &.external {
+    position: relative;
+    display: inline-block;
+    padding-right: 13px;
+    &:after {
+      content: $icon-external;
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      font-family: 'physical-web' !important;
+      font-size: 11px;
+      color: inherit;
+      opacity: 0.5;
+    }
+  }
 }
 
 iframe {
@@ -153,16 +169,17 @@ blockquote {
   top: 50px;
   left: 0;
   h4 {
+    display: none;
     margin: 0; 
     margin-top: 5px;
   }
   ul {
-    display: none;
     list-style-type: none;
     padding-left: 0;
     li {
       margin:7px 0;
       a {
+        display: none;
         font-family: $font-family-heading;
         font-weight: bold;
         font-size: 19px;
@@ -176,7 +193,11 @@ blockquote {
       }
     }
     &.section-nav {
-      display: block;
+      li {
+        a {
+          display: inline-block;
+        }
+      }
     }
   }
   &.open {
@@ -254,19 +275,12 @@ blockquote {
   Utility Classes
   ----------------------------------------- */
 
-.main {
-  margin: 0 0 0 280px;
-  width: calc(100% - 280px);
-  .container {
-    max-width: 90%;
-  }
-}
 
 .container {
- position: relative;
- max-width: 100%;
- width: $live-content-width;
- margin: 0 auto;
+  position: relative;
+  max-width: 100%;
+  width: $live-content-width;
+  margin: 0 auto;
 }
 
 .smaller {
@@ -282,11 +296,7 @@ blockquote {
   max-width: 1024px;
 }
 
-.two-column-layout{
-  .row {
-    align-items: inherit;
-  }
-}
+
 
 .col-4 {
   width: 30%;
@@ -301,8 +311,8 @@ blockquote {
 }
 
 .content {
- position: relative;
- padding: $content-padding;
+  position: relative;
+  padding: $content-padding;
 }
 
 .no-svg {
@@ -356,6 +366,15 @@ blockquote {
   margin: 0 auto;
 }
 
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+
 // display
 
 .hide {
@@ -399,23 +418,6 @@ blockquote {
   }
 }
 
-// responsive
-.break-50 {
-  width: 50% !important;
-}
-.break-60 {
-  width: 60% !important;
-}
-.break-70 {
-  width: 70% !important;
-}
-.break-80 {
-  width: 80% !important;
-}
-.break-90 {
-  width: 90% !important;
-}
-
 .grid {
   width: 700px;
   margin: 0 auto;
@@ -449,7 +451,7 @@ blockquote {
 }
 .lead {
   font-size: 24px;
-  margin-bottom: 0.25em;
+  margin: 0.25em 0;
 }
 
 .nav {
@@ -463,6 +465,43 @@ blockquote {
     line-height: 30px;
     color: $blue;
   }
+}
+
+// responsive
+img.responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+img.pull-right {
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+img.pull-left {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.break-30 {
+  width: 30% !important;
+}
+.break-40 {
+  width: 40% !important;
+}
+.break-50 {
+  width: 50% !important;
+}
+.break-60 {
+  width: 60% !important;
+}
+.break-70 {
+  width: 70% !important;
+}
+.break-80 {
+  width: 80% !important;
+}
+.break-90 {
+  width: 90% !important;
 }
 
 /* -----------------------------------------
@@ -525,6 +564,12 @@ body.homepage {
     &.grey-lighter {
       background-color: $grey-lighter;
     }
+  }
+}
+body.sidebar {
+  #page-content {
+    width: calc(100% - 380px);
+    margin-left: 350px;
   }
 }
 body.condensed_header {
@@ -594,12 +639,20 @@ body.condensed_header {
 @media (max-width: 1024px) {
   #page-header {
     .brand {
-      left: 80px;
+      left: 20px;
+    }
+  }
+  body.sidebar {
+    #page-content {
+      width: 100%;
+      margin-left: 0;
     }
   }
   #mainnav { display: none; }
   #menu-toggle {
     display: block;
+    left: auto;
+    right: 20px;
   }
   #sidenav {
     z-index: 10;
@@ -609,12 +662,18 @@ body.condensed_header {
       left: 0;
     }
     h4 {
-      // display: block;
+      display: block;
       font-size: 19px;
       font-weight: bold;
       color: $grey-dark;
     }
-    ul { display: block; }
+    ul {
+      li {
+        a {
+          display: inline-block;
+        }
+      }
+    }
     ul.section-nav {
       padding-left: 7px;
       margin-top: 0;
@@ -676,12 +735,6 @@ body.condensed_header {
       }
     }
   }
-  #page-header {
-    .brand {
-      left: auto;
-      right: 20px;
-    }
-  }
 
   #page-footer {
     position:relative;
@@ -738,6 +791,15 @@ body.condensed_header {
     .content {
       height: 200px;
     }
+  }
+  .break-30,
+  .break-40,
+  .break-50,
+  .break-60,
+  .break-70,
+  .break-80,
+  .break-90 {
+    width: 100% !important;
   }
 }
 
