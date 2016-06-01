@@ -90,7 +90,6 @@ jQuery(document).ready(function($) {
   });
 
   // Add external link indicators
-  $('a[target="_blank"]').addClass('external');
-  $('a[href^="http"]').addClass('external');
+  $('a[target="_blank"], a[href^="http"]').not('.button').addClass('external');
 });
 
